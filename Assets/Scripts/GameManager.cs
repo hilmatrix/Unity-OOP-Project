@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
         wait = 0;
         spawnWaitTime = spawnDelayMax;
         displayGameOver.SetActive(false);
+
+        StartGame(SaveManager.instance.difficulty);
     }
 
     // Update is called once per frame
@@ -92,6 +94,7 @@ public class GameManager : MonoBehaviour
         {
             gameStarted = false;
             displayGameOver.SetActive(true);
+            SaveManager.instance.SaveScore(score);
         }
     }
 
@@ -111,6 +114,11 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

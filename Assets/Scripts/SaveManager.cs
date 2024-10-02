@@ -8,7 +8,8 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
 
-    public Color TeamColor;
+    public int difficulty;
+
     private string savePath;
     public static int SAVE_MAX = 5;
 
@@ -65,6 +66,7 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
+        difficulty = 1;
         savePath = Application.persistentDataPath + "/savefile.json";
 
         if (!File.Exists(savePath))

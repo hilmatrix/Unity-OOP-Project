@@ -17,7 +17,9 @@ public class TitleManager : MonoBehaviour
     public Button start;
     public Button exit;
     public Button clearScore;
+
     public List<TMP_Text> scoreList;
+    public List<DifficultyButton> difficultyButtonList;
 
     // Start is called before the first frame update
     void Start()
