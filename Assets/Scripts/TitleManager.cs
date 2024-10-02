@@ -12,11 +12,11 @@ using UnityEditor;
 
 public class TitleManager : MonoBehaviour
 {
-    public TMP_InputField nameText;
-    public TMP_Text warning;
-    public Button start;
-    public Button exit;
-    public Button clearScore;
+    [SerializeField] private TMP_InputField nameText;
+    [SerializeField] private TMP_Text warning;
+    [SerializeField] private Button start;
+    [SerializeField] private Button exit;
+    [SerializeField] private Button clearScore;
 
     public List<TMP_Text> scoreList;
     public List<DifficultyButton> difficultyButtonList;

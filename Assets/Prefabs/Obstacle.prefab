@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8847267313515918942}
   - component: {fileID: 1340515024124132237}
   - component: {fileID: 2344303493710125394}
-  - component: {fileID: 2102545074605445088}
   - component: {fileID: 7920460667861443557}
   - component: {fileID: 2730322332171084578}
   - component: {fileID: 5730943170862825196}
+  - component: {fileID: -6012413234633725139}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -87,25 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2102545074605445088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2460058147142018269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f282453c521222540b5e3381426dac45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  rotationSpeed: 10
-  health: 3
-  explosion: {fileID: 3514446696455857272, guid: 34567ccbd7aa4e649be6ed7d8c1cb408, type: 3}
-  audioSource: {fileID: 0}
-  crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
-  speedDeviation: 10
 --- !u!114 &7920460667861443557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +152,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6012413234633725139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460058147142018269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb73897acd3c20d4ba21390639f80e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 3514446696455857272, guid: 34567ccbd7aa4e649be6ed7d8c1cb408, type: 3}
+  audioSource: {fileID: 0}
+  crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
+  m_health: 3
+  rotationSpeedVector: {x: 0, y: 0, z: 0}
+  rotationSpeed: 10
+  speedDeviation: 10

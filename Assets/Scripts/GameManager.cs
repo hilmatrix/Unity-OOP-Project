@@ -6,21 +6,32 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject obstacle;
-    public float positionZ = 100f;
-    public float spawnDelayMin = 2f;
-    public float spawnDelayMax = 4f;
-    public float spawnWaitTime;
-    public float wait;
-    public int difficulty = 3;
-    public Text textHealth;
-    public Text textScore;
-    public Text textDifficulty;
-    public int _health;
-    public int _score;
-    public bool gameStarted = false;
-    public GameObject displayStart;
-    public GameObject displayGameOver;
+    [SerializeField] private GameObject asteroid;
+    [SerializeField] private GameObject ufo;
+    [SerializeField] private float positionZ = 100f;
+    [SerializeField] private float spawnDelayMin = 2f;
+    [SerializeField] private float spawnDelayMax = 4f;
+    [SerializeField] private float spawnWaitTime;
+    [SerializeField] private float wait;
+    [SerializeField] private Text textHealth;
+    [SerializeField] private Text textScore;
+    [SerializeField] private Text textDifficulty;
+    [SerializeField] private int _health;
+    [SerializeField] private int _score;
+    [SerializeField] private bool gameStarted = false;
+    [SerializeField] private GameObject displayStart;
+    [SerializeField] private GameObject displayGameOver;
+
+    // ENCAPSULATION
+    [SerializeField] private int m_difficulty = 1;
+
+    int spawnBeforeUFO = 0;
+
+    public int difficulty
+    {
+        get { return m_difficulty; }
+        private set { m_difficulty = value; }
+    }
 
     public int health
     {
@@ -77,8 +88,17 @@ public class GameManager : MonoBehaviour
         else
         {
             wait = 0;
-            Instantiate(obstacle, new Vector3(Random.RandomRange(-10,10), 0, positionZ), transform.rotation);
-            spawnWaitTime = Random.RandomRange(spawnDelayMin, spawnDelayMax);
+            if (spawnBeforeUFO > 0)
+            {
+                Instantiate(asteroid, new Vector3(Random.Range(-10, 10), 0, positionZ), transform.rotation);
+                spawnBeforeUFO--;
+
+            } else
+            {
+                Instantiate(ufo, new Vector3(Random.Range(-10, 10), 0, positionZ), transform.rotation);
+                spawnBeforeUFO = 3;
+            }
+            spawnWaitTime = Random.Range(spawnDelayMin, spawnDelayMax);
         }
     }
 

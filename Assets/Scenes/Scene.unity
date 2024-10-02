@@ -344,13 +344,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97f1bee27e254d4586c368336a13424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 2460058147142018269, guid: b4283f88a33dc4145a985b62f9dffca3, type: 3}
+  asteroid: {fileID: 2460058147142018269, guid: b4283f88a33dc4145a985b62f9dffca3, type: 3}
+  ufo: {fileID: 1035009032110498220, guid: 5964b34fa2bd99b45819776186644b72, type: 3}
   positionZ: 100
   spawnDelayMin: 0
   spawnDelayMax: 1
   spawnWaitTime: 0
   wait: 0
-  difficulty: 1
   textHealth: {fileID: 1377312446}
   textScore: {fileID: 598753586}
   textDifficulty: {fileID: 9489311}
@@ -359,6 +359,7 @@ MonoBehaviour:
   gameStarted: 0
   displayStart: {fileID: 933295764}
   displayGameOver: {fileID: 291078036}
+  m_difficulty: 1
 --- !u!82 &53440712
 AudioSource:
   m_ObjectHideFlags: 0
